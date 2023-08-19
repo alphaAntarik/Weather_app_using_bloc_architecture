@@ -1,11 +1,7 @@
 part of 'weathersearch_bloc.dart';
 
-sealed class WeathersearchEvent extends Equatable {
-  const WeathersearchEvent();
-
-  @override
-  List<Object> get props => [];
-}
+@immutable
+abstract class WeathersearchEvent {}
 
 class FetchDataSearch extends WeathersearchEvent {
   final String searchstring;
@@ -14,3 +10,4 @@ class FetchDataSearch extends WeathersearchEvent {
   @override
   List<Object> get props => [searchstring];
 }
+

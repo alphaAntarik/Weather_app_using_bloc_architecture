@@ -5,7 +5,9 @@ import 'package:weather_app_using_bloc_architecture/bloc/weather%20bloc/weather_
 import 'package:weather_app_using_bloc_architecture/repo/weatherrepository.dart';
 import 'package:weather_app_using_bloc_architecture/screens/searchresult.dart';
 
-import '../bloc/weather search/weathersearch_bloc.dart';
+import '../bloc/weather search bloc/weathersearch_bloc.dart';
+
+
 
 class SearchWidget extends StatefulWidget {
   const SearchWidget({super.key});
@@ -40,13 +42,11 @@ class _SearchWidgetState extends State<SearchWidget> {
               // WeatherBloc(
               //     weatherRepository: WeatherRepository(),
               //     cityname: searchController.text);
-              Navigator.pushNamed(
-                context,
-                SearchResult.searchresultroute,
-                // arguments: searchController.text,
-              );
-              searchController.clear();
-              FocusScope.of(context).unfocus();
+    Navigator.of(context).pushNamed(
+    SearchResult.searchresultroute);
+
+              // searchController.clear();
+              // FocusScope.of(context).unfocus();
             } else {
               FocusScope.of(context).unfocus();
             }

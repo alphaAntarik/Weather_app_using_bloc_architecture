@@ -1,13 +1,10 @@
 part of 'weathersearch_bloc.dart';
 
-sealed class WeathersearchState extends Equatable {
-  const WeathersearchState();
+@immutable
+abstract class WeathersearchState {}
 
-  @override
-  List<Object> get props => [];
-}
+class WeathersearchInitial extends WeathersearchState {}
 
-final class WeathersearchInitial extends WeathersearchState {}
 
 final class DataLoading extends WeathersearchState {}
 
@@ -26,3 +23,4 @@ final class DataError extends WeathersearchState {
   @override
   List<Object> get props => [error];
 }
+

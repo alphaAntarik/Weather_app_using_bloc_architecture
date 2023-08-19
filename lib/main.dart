@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'bloc/location bloc/location_bloc.dart';
 import 'bloc/weather bloc/weather_bloc.dart';
 
+import 'bloc/weather search bloc/weathersearch_bloc.dart';
 import 'screens/homepage.dart';
 
 void main() {
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
           create: (context) =>
               LocationBloc(locationrespiratory: LocationRespiratory()),
         ),
+        BlocProvider(
+            create: (context) =>
+                WeathersearchBloc(weatherRepository: WeatherRepository()))
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
