@@ -35,31 +35,41 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
-
         theme: ThemeData(
           textTheme: GoogleFonts.anekGujaratiTextTheme().copyWith(
               displayMedium: GoogleFonts.aBeeZee().copyWith(
-                  color: DateTime.now().hour > 5 && DateTime.now().hour < 17
-                      ? Color(0xFF3F3F3F)
-                      : Colors.white),
+                  color:
+                      //  DateTime.now().hour > 5 && DateTime.now().hour < 17
+                      //     ?
+                      Color(0xFF3F3F3F)
+                  //     :
+                  //  Colors.white
+                  ),
               displayLarge: GoogleFonts.anekGujarati().copyWith(
-                  color: DateTime.now().hour > 5 && DateTime.now().hour < 17
-                      ? Color(0xFF3F3F3F)
-                      : Colors.white)),
+                  color:
+                      // DateTime.now().hour > 5 && DateTime.now().hour < 17
+                      //     ?
+                      Color(0xFF3F3F3F)
+                  //  :
+                  // Colors.white
+                  )),
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.deepPurple,
           ).copyWith(
-              background: DateTime.now().hour > 5 && DateTime.now().hour < 17
-                  ? Color(0xFFD8F2FF)
-                  : Color(0xFF3F3F3F)),
+              background:
+                  //  DateTime.now().hour > 5 && DateTime.now().hour < 17
+                  //     ?
+                  Color(0xFFD8F2FF)
+              // :
+              //  Color(0xFF3F3F3F)
+              ),
         ),
-        // home: MyHomePage(),
         initialRoute: '/',
         routes: {
           '/': (context) => MyHomePage(),
           SearchWidget.searchwidget: (context) => const SearchWidget(),
-          // SearchResult.searchresultroute:(context) => const SearchResult(),
+          SearchResult.searchresultroute: (context) => const SearchResult(),
         },
       ),
     );

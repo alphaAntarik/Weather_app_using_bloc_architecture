@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app_using_bloc_architecture/bloc/weather%20bloc/weather_bloc.dart';
+
 import 'package:weather_app_using_bloc_architecture/repo/weatherrepository.dart';
+import 'package:weather_app_using_bloc_architecture/screens/searchresult.dart';
+
+import '../bloc/weather search/weathersearch_bloc.dart';
 
 class SearchWidget extends StatefulWidget {
   const SearchWidget({super.key});
@@ -29,15 +34,17 @@ class _SearchWidgetState extends State<SearchWidget> {
           controller: searchController,
           onEditingComplete: () {
             if (searchController.text.isNotEmpty) {
+              BlocProvider.of<WeathersearchBloc>(context)
+                  .add(FetchDataSearch(searchstring: searchController.text));
+
               // WeatherBloc(
               //     weatherRepository: WeatherRepository(),
               //     cityname: searchController.text);
-              // Navigator.pushNamed(
-              //   context,
-              //   '/',
-              //   arguments: searchController.text,
-              // )
-              ;
+              Navigator.pushNamed(
+                context,
+                SearchResult.searchresultroute,
+                // arguments: searchController.text,
+              );
               searchController.clear();
               FocusScope.of(context).unfocus();
             } else {
