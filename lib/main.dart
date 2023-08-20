@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => WeatherBloc(
-              weatherRepository: WeatherRepository(), cityname: "london"),
+              ),
         ),
         BlocProvider(
           create: (context) =>

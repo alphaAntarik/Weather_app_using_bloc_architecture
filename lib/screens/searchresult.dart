@@ -6,6 +6,7 @@ import '../bloc/weather search bloc/weathersearch_bloc.dart';
 
 import '../widgets/astro.dart';
 import '../widgets/cityname.dart';
+import '../widgets/forecast.dart';
 
 class SearchResult extends StatelessWidget {
   static String searchresultroute = '/searchresultroute';
@@ -298,6 +299,31 @@ class SearchResult extends StatelessWidget {
                         )
                       ],
                     ),
+                    SizedBox(height: MediaQuery.of(context).size.height*0.03,),
+                    Text("Forecasts for upcoming days -",
+                      style: GoogleFonts.balooTammudu2(
+                          color: Theme.of(context)
+                              .textTheme
+                              .displayLarge!
+                              .color,
+                          textStyle: TextStyle(
+                            fontSize:
+                            MediaQuery.of(context).size.height *
+                                0.03,
+                            fontWeight: FontWeight.w300,
+                          )
+                      ),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        // ForeCastWidget(image: "${state.weatherreport.forecast!.forecastday![0].day!.condition!.icon}", time: "${state.weatherreport.forecast!.forecastday![0].day!.avgtempC}", isday:  "${state.weatherreport.forecast!.forecastday![0].date}"),
+                        // SizedBox(width: MediaQuery.of(context).size.height*0.05,),
+                        ForeCastWidget(image: "${state.weatherreport.forecast!.forecastday![1].day!.condition!.icon}", time: "${state.weatherreport.forecast!.forecastday![1].day!.avgtempC}", isday:   "${state.weatherreport.forecast!.forecastday![1].date}"),
+                        SizedBox(width: MediaQuery.of(context).size.height*0.05,),
+                        ForeCastWidget(image: "${state.weatherreport.forecast!.forecastday![2].day!.condition!.icon}", time: "${state.weatherreport.forecast!.forecastday![2].day!.avgtempC}", isday:  "${state.weatherreport.forecast!.forecastday![2].date}"),
+                        SizedBox(width: MediaQuery.of(context).size.height*0.05,),
+                      ],
+                    )
 
                     //   ],
                     // ),

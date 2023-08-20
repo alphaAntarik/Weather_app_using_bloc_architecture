@@ -15,13 +15,11 @@ class Astro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: isday == 1
-            ? Colors.white.withOpacity(0.5)
-            : Colors.black.withOpacity(0.5), // White fill color
+        color:Colors.white.withOpacity(0.5)
+           , // White fill color
         border: Border.all(
-          color: isday == 1
-              ? Color(0xFF3F3F3F)
-              : Color(0xFFD8F2FF), // Black border color
+          color:  Color(0xFF3F3F3F)
+              , // Black border color
         ),
         borderRadius: BorderRadius.circular(10),
       ),

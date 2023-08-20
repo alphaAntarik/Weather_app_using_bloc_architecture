@@ -8,16 +8,15 @@ part 'weather_event.dart';
 part 'weather_state.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  final WeatherRepository weatherRepository;
-  final String cityname;
+
   //WeatherBloc({required this.weatherRepository}) : super(WeatherLoading());
 
-  WeatherBloc({required this.weatherRepository, required this.cityname})
+  WeatherBloc()
       : super(WeatherLoading()) {
     on<FetchDataEvent>((event, emit) async {
       emit(WeatherLoading());
       try {
-        final weather = await weatherRepository.createAlbum(cityname);
+        final weather = await event.weatherRepository.createAlbum(event.lat, event.long);
         emit(WeatherLoaded(weatherreport: weather));
       } catch (e) {
         emit(WeatherError(e.toString()));

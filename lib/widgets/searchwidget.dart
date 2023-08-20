@@ -29,9 +29,9 @@ class _SearchWidgetState extends State<SearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.transparent,),
       body: Padding(
-        padding: EdgeInsets.only(bottom: 8, right: 5, left: 5),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.height*0.05),
         child: TextField(
           controller: searchController,
           onEditingComplete: () {

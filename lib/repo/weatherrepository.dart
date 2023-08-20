@@ -2,13 +2,14 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+
 import '../models/searchweathermodel.dart';
 
 class WeatherRepository {
-  Future<Searchweathermodel> createAlbumSearch(String cityname) async {
+  Future<Searchweathermodel> createAlbum(String lat, String long) async {
     final http.Response response = await http.get(
         Uri.parse(
-            'https://weatherapi-com.p.rapidapi.com/forecast.json?q=$cityname&days=3'),
+            'https://weatherapi-com.p.rapidapi.com/forecast.json?q=$lat%2C$long&days=6'),
         headers: {
           "X-RapidAPI-Key":
               "c0c533132cmsh9902808cfe93801p172f22jsn1fd21f57c77f",
@@ -26,10 +27,10 @@ class WeatherRepository {
     }
   }
 
-  Future<Searchweathermodel> createAlbum(String cityname) async {
+  Future<Searchweathermodel> createAlbumSearch(String cityname) async {
     final http.Response response = await http.get(
         Uri.parse(
-            'https://weatherapi-com.p.rapidapi.com/forecast.json?q=$cityname&days=3'),
+            'https://weatherapi-com.p.rapidapi.com/forecast.json?q=$cityname&days=6'),
         headers: {
           "X-RapidAPI-Key":
               "c0c533132cmsh9902808cfe93801p172f22jsn1fd21f57c77f",
