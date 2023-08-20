@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_using_bloc_architecture/bloc/weather%20bloc/weather_bloc.dart';
 
-import 'package:weather_app_using_bloc_architecture/repo/weatherrepository.dart';
 import 'package:weather_app_using_bloc_architecture/screens/searchresult.dart';
 
 import '../bloc/weather search bloc/weathersearch_bloc.dart';
@@ -56,7 +54,7 @@ class _SearchWidgetState extends State<SearchWidget> {
           decoration: InputDecoration(
             hintMaxLines: 1,
             hintText: "Search any city",
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               color: Colors.grey,
             ),
             suffixIconColor: Colors.grey,
@@ -68,7 +66,7 @@ class _SearchWidgetState extends State<SearchWidget> {
               borderSide: BorderSide.none,
             ),
             suffixIcon: Container(
-              margin: EdgeInsets.all(6),
+              margin: const EdgeInsets.all(6),
               width: 15,
               height: 15,
               decoration: BoxDecoration(
