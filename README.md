@@ -1,10 +1,18 @@
 # weather_app_using_bloc_architecture
 
-A new Flutter project.
+This is my new project , "Weatherly". It is a web application that can predict forecasts.
 
-## Getting Started
+Features -
+1. Bloc architecture
+2. real time Api
+3. Location access
+4. Search for any city
 
-This project is a starting point for a Flutter application.
+
+
+
+https://github.com/alphaAntarik/weather_app_using_bloc_architecture/assets/94217487/14cc61a4-ffbe-497c-af7f-865e3f7b1ad2
+
 
 A few resources to get you started if this is your first Flutter project:
 
